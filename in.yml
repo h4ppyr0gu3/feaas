@@ -1,0 +1,108 @@
+logged_out_header:
+  header:
+    right:
+      clickable:
+        - text: Mapp
+path: /
+size: 1
+- text: All Songs
+  path: /songs
+  size: 4
+- text: Search
+  path: /search
+  size: 4
+- text: Album request
+  path: /alubms
+  size: 4
+  left:
+    clickable:
+      - button: Sign Up
+  color: green
+  method: get/post
+  path: /sign_up
+- button: Sign In
+  color: none
+  method: get
+  path: /sign_in
+
+  logged_in_header:
+    header:
+      right:
+        clickable:
+          - text: Mapp
+  path: /
+  size: 1
+- text: All Songs
+  path: /songs
+  size: 4
+- text: Search
+  path: /search
+  size: 4
+- text: Album request
+  path: /alubms
+  size: 4
+  left:
+    clickable:
+      - button: profile
+  color: blue
+  method: get/post/render
+  path: /sign_up
+- button: Sign Out
+  color: none
+  method: delete
+  path: /sign_out?user_id=$USER_ID
+
+  footer:
+    full-width:
+      clickable:
+        - text: Contact Us
+  path: /contact
+- text: About us
+  path: /about
+- text: Terms of Use
+  path: /terms
+- text: Privacy Policy
+  path: /privacy
+- text: Copyright Claims
+
+
+  route: /
+  header:
+    logic: if logged_out
+  if: logged_in
+    <<LOGGED_IN_HEADER
+  else:
+    <<LOGGED_OUT_HEADER
+  body:
+    center:
+      - text: Welcome text
+  size: 2
+  padding: 2
+  margin: 2
+- text: Features
+  size: 4
+  bulma-class: mt-4
+- ulist:
+  - text: some text
+  size: 5
+- text: some text
+  size: 5
+- text: some text
+  size: 5
+- text: Contact us for any additional features
+  size: 5
+  bulma-class: mt-4
+  footer:
+    <<FOOTER
+
+  route: /search
+  header:
+    <</header
+  body:
+    form:
+      search: text
+  dropdown: date
+- hour
+- week
+- month
+dropdown: relevance

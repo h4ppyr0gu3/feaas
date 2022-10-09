@@ -1,0 +1,77 @@
+{
+  "logic": {
+    "expression": "$user_id.present?",
+    "type": "if",
+    "if": {
+      "right": {
+        "clickable": [
+          {
+            "type": "text",
+            "value": "Mapp",
+            "size": 1,
+            "path": "/"
+          },
+          {
+            "type": "text",
+            "value": "All Songs",
+            "size": 1,
+            "path": "/all_songs"
+          },
+          {
+            "type": "text",
+            "value": "Search",
+            "size": 1,
+            "path": "/search"
+          }
+        ]
+      }
+    },
+    "else": {
+      "right": "right side version",
+      "left": "left side"
+    }
+  },
+  "component": {
+    "name": "variable_name here",
+    "values": {
+      "image": "$request_name.image",
+      "title": "$request_name.title",
+      "download": "[https://youtube.com/$response_name.url/](https://youtube.com/$response_name.url/)"
+    },
+    "card": {
+      "cols": [
+        {
+          "col_size": 1,
+          "image": "https://play-lh.googleusercontent.com/V_P-I-UENK93ahkQgOWel8X8yFxjhOOfMAZjxXrqp311Gm_RBtlDXHLQhwFZN8n4aIQ",
+          "type": "image",
+          "alt": "alt text"
+        },
+        {
+          "type": "text",
+          "value": "some text in here"
+        },
+        {
+          "type": "button",
+          "value": "button called",
+          "button-group": [
+            {"watch-video": {
+              "click": {
+                "toggle": "component name",
+                "request": "dynamic request url"
+              }
+            }},
+            {"Download": {
+              "click": {
+                "request": "dynamic request url",
+                "method": "post",
+                "body": {
+                  "text": "json form"
+                }
+              }
+            }}
+          ]
+        }
+      ]
+    }
+  }
+}
