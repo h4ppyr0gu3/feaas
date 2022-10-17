@@ -20,3 +20,25 @@ module Generators
     end
   end
 end
+#{
+        # "clickable": [
+        #   {
+        #     "type": "text",
+        #     "value": "Mapp",
+        #     "size": 1,
+        #     "path": "/"
+        #   },
+        #   {
+        #     "type": "text",
+        #     "value": "All Songs",
+        #     "size": 1,
+        #     "path": "/all_songs"
+        #   },
+        #   {
+        #     "type": "text",
+        #     "value": "Search",
+        #     "size": 1,
+        #     "path": "/search"
+        #   }
+        # ]
+      # }

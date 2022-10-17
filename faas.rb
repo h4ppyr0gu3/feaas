@@ -87,7 +87,10 @@ end
 
 class Body
   def call
-    Component.call(json: json_file_data[:component]).data
+    a = Component.call(json: json_file_data[:component]).data
+
+    pp a
+    a
   end
 
   def json_file_data
@@ -107,7 +110,7 @@ class Doc
   end
 
   def data
-    return unless success?
+    # return unless success?
     @data
   end
 end
