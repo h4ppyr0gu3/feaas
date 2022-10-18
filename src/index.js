@@ -27,6 +27,7 @@ router.add('', function () {
       apklrbsiResponse = body;
       console.log(apklrbsiResponse);
       apklrbsiResponse.songs.forEach((song) => {
+
         entry = document.getElementById("entry");
         var container = document.createElement('div');
         container.classList.add('card');
